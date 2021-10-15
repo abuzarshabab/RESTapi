@@ -1,8 +1,6 @@
 const express = require("express");
 const controller = require("../controller/controller");
-var jwt = require("jsonwebtoken");
-// const SECRET_TOKEN = process.env.ACCESS_TOKEN || "This is very secret";
-const SECRET_TOKEN = "hello";
+
 const route = express.Router();
 // Api lists
 
@@ -18,7 +16,7 @@ route.get("/profile", controller.authenticateToken, controller.profile);
 route.patch("/update", controller.authenticateToken, controller.edit);
 
 // Handling password change request
-route.patch("/update", controller.changePwd);
+route.put("/update", controller.authenticateToken, controller.changePwd);
 
 module.exports = route;
 
