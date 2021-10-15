@@ -1,0 +1,28 @@
+General Note
+- Node JS application server should run 5049 port
+- common validation should have on each APIs
+- get profile, edit profile and update password APIs should not directly accessible without login. to access this user must be login
+
+You need to create below list of APIs,
+1. User Registration with below fields
+First name
+Last Name
+email
+password
+phone_number
+gender
+
+2. Do User Login with below fields
+email
+password
+
+3. get user profile data which are added at the time of registration
+
+4. edit user profile all data without password field
+
+5. update password
+current password
+new password
+confirm password
+
+Best of luck
