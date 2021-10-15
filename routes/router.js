@@ -1,6 +1,8 @@
 const express = require("express");
 const controller = require("../controller/controller");
-
+var jwt = require("jsonwebtoken");
+// const SECRET_TOKEN = process.env.ACCESS_TOKEN || "This is very secret";
+const SECRET_TOKEN = "hello";
 const route = express.Router();
 // Api lists
 
@@ -10,7 +12,7 @@ route.post("/register", controller.register);
 route.post("/login", controller.login);
 
 // Handling Profile request
-route.get("/profile", controller.profile);
+route.get("/profile", controller.authenticateToken, controller.profile);
 
 // Handling profile edit request
 route.put("/update", controller.edit);
@@ -19,3 +21,5 @@ route.put("/update", controller.edit);
 route.patch("/update", controller.changePwd);
 
 module.exports = route;
+
+
