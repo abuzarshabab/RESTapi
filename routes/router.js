@@ -15,7 +15,7 @@ route.post("/login", controller.login);
 route.get("/profile", controller.authenticateToken, controller.profile);
 
 // Handling profile edit request
-route.put("/update", controller.edit);
+route.patch("/update", controller.authenticateToken, controller.edit);
 
 // Handling password change request
 route.patch("/update", controller.changePwd);

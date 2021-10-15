@@ -71,12 +71,14 @@ exports.login = (req, res) => {
     });
 };
 
+
+
 // Getting profile using get method and jwt token
+
+
 exports.profile = (req, res) => {
   console.log(req.user.Email);
-
-  // Finding the respective data after authorization
-
+  // Finding the respective data after authorization done
   User.findOne({ Email: req.user.Email })
     // Sending Response as Json Format
     .then((data) => {
@@ -96,11 +98,33 @@ exports.profile = (req, res) => {
       res.status(400);
     });
 };
+// Handling Patch Request
+exports.edit = async (req, res) => {
 
-exports.edit = (req, res) => {
-  let data = req.body;
-  console.log(data);
-  res.send(data);
+ console.log(req.user.Email);
+  const update = {
+    FirstName: req.body.FirstName,
+    LastName: req.body.LastName,
+    Email: req.body.Email,
+    PhoneNumber: req.body.PhoneNumber,
+    Gender: req.body.Gender,
+  };
+  // Finding the respective data after authorization done   
+  try{
+    const updater = await User.findOneAndUpdate(
+      { Email: req.user.Email },
+      update
+    );
+    // Sending Response as Json Format
+    if(updater){
+      res.json({ message: "Updated successfully" });
+    }
+  }
+  catch(err){
+    console.log(err)
+    res.json({error:err});
+  }
+
 };
 
 exports.changePwd = (req, res) => {
