@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "7ad2e947-f72d-438d-b807-c9b24528a711",
+		"name": "RESTapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "FirstName",
+							"value": "Abuzar",
+							"type": "text"
+						},
+						{
+							"key": "LastName",
+							"value": "Shabab",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "abuzarshabab@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "PhoneNumber",
+							"value": "9973922757",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "Password",
+							"type": "text"
+						},
+						{
+							"key": "Gender",
+							"value": "Male",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5049/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5049",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login JWT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Email",
+							"value": "abuzarshabab@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "Password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5049/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5049",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "Email",
+							"value": "abuzarshabab@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "Password",
+							"value": "Password",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFidXphcnNoYWJhYkBnbWFpbC5jb20iLCJpYXQiOjE2MzQ0NjE4MzMsImV4cCI6MTYzNDQ5NzgzM30.pFXqBkMaPfJGBesavJKMa_-BaIyKQbQqOESs3pi0-fo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5049/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5049",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFidXphcnNoYWJhYkBnbWFpbC5jb20iLCJpYXQiOjE2MzQ0NjEwMjEsImV4cCI6MTYzNDQ5NzAyMX0.C7h5O0cPlh4-lBE37WCDfaqOBPZWANuvJ0DLJposjpI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "OldPassword",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "NewPassword",
+							"value": "newPassword",
+							"type": "text"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "newPassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5049/updatePwd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5049",
+					"path": [
+						"updatePwd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImFidXphcnNoYWJhYkBnbWFpbC5jb20iLCJpYXQiOjE2MzQ0NjEwMjEsImV4cCI6MTYzNDQ5NzAyMX0.C7h5O0cPlh4-lBE37WCDfaqOBPZWANuvJ0DLJposjpI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5049/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5049",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
