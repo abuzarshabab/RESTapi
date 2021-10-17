@@ -16,7 +16,7 @@ route.get("/profile", controller.authenticateToken, controller.profile);
 route.patch("/update", controller.authenticateToken, controller.edit);
 
 // Handling password change request
-route.put("/update", controller.authenticateToken, controller.changePwd);
+route.put("/updatePwd", controller.authenticateToken, controller.changePwd);
 
 module.exports = route;
 
